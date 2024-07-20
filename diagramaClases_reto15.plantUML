@@ -1,0 +1,42 @@
+@startuml diagramaClase_reto15
+class TurnOnDevices{
+    +Main(string[] args)
+    +turnOnDevices(Conectable device)
+}
+interface  Conectable  <<interface>>{
+    +turnOn()
+    +tunrOff()
+    +isOn()
+}
+
+class Lamp{
+    +turnOn()
+    +tunrOff()
+    +isOn()
+}
+
+class Computer{
+    +turnOn()
+    +tunrOff()
+    +isOn()
+}
+
+class CoffeMaker{
+    +on()
+    +off()
+    +isOff()
+}
+
+class CoffeMakerAdap{
+    +turnOn()
+    +tunrOff()
+    +isOn()
+}
+
+CoffeMaker <-- CoffeMakerAdap
+Conectable <|-- Lamp
+Conectable <|-- Computer
+Conectable <|-- CoffeMakerAdap
+TurnOnDevices --> Conectable
+
+@enduml
